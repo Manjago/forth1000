@@ -22,4 +22,6 @@ S" test/ttester.fs" included
 
 t{ 2E L -> 1256E-2 }t
 t{ 3E S -> 2826E-2 }t
-t{ 2E V7 -> 1256E-2 1256E-2 }t
+
+1e-2 abs-near f!  set-near
+t{ 5E V7 -> 314E-1 785E-1 }t
