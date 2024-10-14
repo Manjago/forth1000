@@ -9,18 +9,11 @@ DUP ( a^2 b b )
 * ( a^2 b^2)
 ;
 
-: B10 ( a b -- a^2+b^2, a^2-b^2, a^2*b^2, a^2/b^2 )
-TO2 ( a^2 b^2 )
-2DUP ( a^2 b^2 a^2 b^2 )
-+ ( a^2 b^2 a^2+b^2 )
--ROT ( a^2+b^2 a^2 b^2 )
-2DUP ( a^2+b^2 a^2 b^2 a^2 b^2 )
-- ( a^2+b^2 a^2 b^2 a^2-b^2 )
--ROT ( a^2+b^2 a^2-b^2 a^2 b^2 )
-2DUP ( a^2+b^2 a^2-b^2 a^2 b^2 a^2 b^2 )
-* ( a^2+b^2 a^2-b^2 a^2 b^2 a^2*b^2 )
--ROT ( a^2+b^2 a^2-b^2 a^2*b^2 a^2 b^2 )
-/ ( a^2+b^2 a^2-b^2 a^2*b^2 a^2/b^2 )
+S" begin-common.fs" included
+
+: B10 ( a b -- a+b, a-b, a*b, a/b )
+TO2 ( a b )
+ALL_AR
 ;
 
 S" test/ttester.fs" included
